@@ -3,7 +3,7 @@ from degas.gridding import gridGalaxy
 datadir='/mnt/bigdata/erosolow/surveys/DEGAS/'
 
 datadir = '/mnt/bigdata/erosolow/surveys/DEGAS/'
-ppo = False
+ppo = True
 # gridGalaxy(galaxy='IC0342', setup='12CO',
 #            release='QA0', datadir=datadir,
 #            PostprocOnly=ppo)
@@ -26,15 +26,15 @@ gallist = ['IC0342',
            'NGC5055',
            'NGC6946']
 # gallist = gallist[-2:]
-# gallist = ['NGC2903']
-HCNgals = gallist[0:2]
+gallist = ['NGC4321','NGC5055']
+HCNgals = gallist
 
 # HCNgals = ['NGC2903', 'NGC2146', 'IC0342']
 # HCNgals = ['IC0342']
 for gal in HCNgals:
     gridGalaxy(galaxy=gal, setup='HCN_HCO+',
                release='QA0', datadir=datadir, PostprocOnly=ppo,
-               posblorder=5)
+               posblorder=7)
 
 
 COgals = gallist
@@ -44,7 +44,7 @@ COgals = gallist
 for gal in COgals:
      gridGalaxy(galaxy=gal, setup='13CO_C18O',
                 release='QA0', datadir=datadir, PostprocOnly=ppo,
-                posblorder=5)
+                posblorder=7)
 
 
 
